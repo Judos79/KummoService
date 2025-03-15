@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div id="contenedor">
+        <form id="form">
+            <h2>Iniciar Sesión</h2>
+
+            <div class="input-container">
+                <i class="fa fa-user"></i>
+                <input type="text" id="Usuario" name="Usuario" placeholder="Insertar Usuario" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fa fa-lock"></i>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Insertar Contraseña" required>
+            </div>
+
+            <button type="submit">LOGIN</button>
+
+            <div class="extra-links">
+                <a href="#">¿Olvidaste tu contraseña?</a> | 
+                <a href="#">Registrarse</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let usuario = document.getElementById("Usuario").value.trim();
+            let contraseña = document.getElementById("contraseña").value.trim();
+
+            if (usuario === "" || contraseña === "") {
+                alert("Por favor, llena todos los campos.");
+            } else {
+                window.location.href = "page-1.html";
+            }
+        });
+    </script>
+</body>
+</html>
